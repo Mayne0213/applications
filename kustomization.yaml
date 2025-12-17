@@ -7,8 +7,6 @@ resources:
   - docusaurus/argocd/docusaurus.yaml
   - code-server/argocd/code-server.yaml
   - umami/argocd/umami.yaml
-  - minio/argocd/minio.yaml
-  - pgweb/argocd/pgweb.yaml
   - kubernetes-dashboard/argocd/kubernetes-dashboard.yaml
 
   # Backup jobs

@@ -24,16 +24,6 @@ Privacy-focused web analytics platform.
 - Self-hosted analytics solution
 - No cookies or tracking
 
-### MinIO
-S3-compatible object storage service.
-- Used for backups and file storage
-- Compatible with AWS S3 API
-
-### PGWeb
-Web-based PostgreSQL database browser.
-- Database administration interface
-- Read-only access to production databases
-
 ### Kubernetes Dashboard
 Web UI for Kubernetes cluster management.
 - Cluster resource visualization
