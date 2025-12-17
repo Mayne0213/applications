@@ -1,0 +1,16 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  # Applications and services
+  - homer/argocd/homer.yaml
+  - docusaurus/argocd/docusaurus.yaml
+  - code-server/argocd/code-server.yaml
+  - umami/argocd/umami.yaml
+  - minio/argocd/minio.yaml
+  - pgweb/argocd/pgweb.yaml
+  - kubernetes-dashboard/argocd/kubernetes-dashboard.yaml
+
+  # Backup jobs
+  - backup/gitea-backup-cronjob.yaml
+  - backup/gitea-minio-setup-job.yaml

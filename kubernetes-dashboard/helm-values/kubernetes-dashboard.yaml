@@ -1,0 +1,60 @@
+# Kubernetes Dashboard Helm Values
+# Chart: https://github.com/kubernetes/dashboard/tree/master/charts/helm-chart/kubernetes-dashboard
+
+fullnameOverride: kubernetes-dashboard
+
+# Disable Kong proxy
+kong:
+  enabled: true
+
+# API component configuration
+api:
+  scaling:
+    replicas: 1
+
+# Metrics scraper is enabled by default
+metricsScraper:
+  enabled: true
+
+# Service configuration
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 9090
+
+# Resource limits
+resources:
+  requests:
+    cpu: 15m  # Reduced to 30% of original (50m -> 15m)
+    memory: 128Mi
+
+# Security settings
+extraArgs:
+  - --auto-generate-certificates
+  - --namespace=kubernetes-dashboard
+  - --system-banner="Kubernetes Dashboard - Production Environment"
+
+# Protocol HTTP for Ingress compatibility
+protocolHttp: true
+
+# Ingress will be configured separately
+ingress:
+  enabled: false
+
+# ServiceAccount configuration
+serviceAccount:
+  create: true
+  name: kubernetes-dashboard
+
+# RBAC configuration
+rbac:
+  create: true
+  # Not working... make sure to Fix this
+  clusterAdminRole: true
+
+# Settings
+settings:
+  clusterName: "mayne-k3s-cluster"
+  itemsPerPage: 10
+  defaultNamespace: "default"
+  namespaceFallbackList: ["default", "kube-system"]
