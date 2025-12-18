@@ -5,6 +5,9 @@ resources:
   # App of Apps Application
   - application.yaml
 
+  # Infrastructure services
+  - gitea/argocd/gitea.yaml
+
   # Applications and services
   - homer/argocd/homer.yaml
   - docusaurus/argocd/docusaurus.yaml
