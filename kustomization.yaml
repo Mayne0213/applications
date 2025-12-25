@@ -14,7 +14,3 @@ resources:
   - code-server/argocd/code-server.yaml
   - umami/argocd/umami.yaml
   - kubernetes-dashboard/argocd/kubernetes-dashboard.yaml
-
-  # Backup jobs
-  - backup/gitea-backup-cronjob.yaml
-  - backup/gitea-minio-setup-job.yaml
