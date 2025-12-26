@@ -16,7 +16,7 @@ api:
       cpu: 5m  # Reduced based on actual usage (1m)
       memory: 200Mi
     limits:
-      # cpu: removed to prevent throttling
+      cpu: null  # Explicitly set to null to remove CPU throttling
       memory: 400Mi
 
 # Auth component configuration
@@ -26,7 +26,7 @@ auth:
       cpu: 5m  # Reduced based on actual usage (1m)
       memory: 200Mi
     limits:
-      # cpu: removed to prevent throttling
+      cpu: null  # Explicitly set to null to remove CPU throttling
       memory: 400Mi
 
 # Web component configuration
