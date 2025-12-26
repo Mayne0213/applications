@@ -20,7 +20,7 @@ metricsScraper:
       cpu: 50m  # Reduced from 100m for worker-node-2 CPU optimization
       memory: 200Mi
     limits:
-      cpu: 250m
+      # cpu: removed to prevent throttling
       memory: 400Mi
 
 # Service configuration
