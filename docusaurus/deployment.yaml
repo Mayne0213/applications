@@ -59,7 +59,6 @@ spec:
             cpu: 50m
             memory: 64Mi
           limits:
-            cpu: null  # Explicitly set to null to remove CPU throttling
             memory: 128Mi
         livenessProbe:
           httpGet:
