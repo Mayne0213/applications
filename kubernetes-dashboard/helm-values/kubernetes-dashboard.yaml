@@ -17,7 +17,7 @@ metricsScraper:
   enabled: true
   resources:
     requests:
-      cpu: 50m  # Reduced from 100m for worker-node-2 CPU optimization
+      cpu: 5m  # Reduced from 50m based on actual usage (1m)
       memory: 200Mi
     limits:
       # cpu: removed to prevent throttling
@@ -32,7 +32,7 @@ service:
 # Resource limits
 resources:
   requests:
-    cpu: 15m  # Reduced to 30% of original (50m -> 15m)
+    cpu: 5m  # Reduced from 15m based on actual usage (1m)
     memory: 128Mi
 
 # Security settings
