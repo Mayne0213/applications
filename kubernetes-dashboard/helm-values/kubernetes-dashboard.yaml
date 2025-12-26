@@ -15,6 +15,13 @@ api:
 # Metrics scraper is enabled by default
 metricsScraper:
   enabled: true
+  resources:
+    requests:
+      cpu: 50m  # Reduced from 100m for worker-node-2 CPU optimization
+      memory: 200Mi
+    limits:
+      cpu: 250m
+      memory: 400Mi
 
 # Service configuration
 service:
