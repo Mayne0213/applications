@@ -11,6 +11,33 @@ kong:
 api:
   scaling:
     replicas: 1
+  resources:
+    requests:
+      cpu: 5m  # Reduced based on actual usage (1m)
+      memory: 200Mi
+    limits:
+      # cpu: removed to prevent throttling
+      memory: 400Mi
+
+# Auth component configuration
+auth:
+  resources:
+    requests:
+      cpu: 5m  # Reduced based on actual usage (1m)
+      memory: 200Mi
+    limits:
+      # cpu: removed to prevent throttling
+      memory: 400Mi
+
+# Web component configuration
+web:
+  resources:
+    requests:
+      cpu: 5m  # Reduced based on actual usage (1m)
+      memory: 128Mi
+    limits:
+      # cpu: removed to prevent throttling
+      memory: 400Mi
 
 # Metrics scraper is enabled by default
 metricsScraper:
@@ -28,12 +55,6 @@ service:
   type: ClusterIP
   port: 80
   targetPort: 9090
-
-# Resource limits
-resources:
-  requests:
-    cpu: 5m  # Reduced from 15m based on actual usage (1m)
-    memory: 128Mi
 
 # Security settings
 extraArgs:
