@@ -15,9 +15,6 @@ api:
     requests:
       cpu: 5m  # Reduced based on actual usage (1m)
       memory: 200Mi
-    limits:
-      cpu: null  # Delete Helm chart default CPU limit
-      memory: 400Mi
 
 # Auth component configuration
 auth:
@@ -25,9 +22,6 @@ auth:
     requests:
       cpu: 5m  # Reduced based on actual usage (1m)
       memory: 200Mi
-    limits:
-      cpu: null  # Delete Helm chart default CPU limit
-      memory: 400Mi
 
 # Web component configuration
 web:
@@ -35,9 +29,6 @@ web:
     requests:
       cpu: 5m  # Reduced based on actual usage (1m)
       memory: 128Mi
-    limits:
-      cpu: null  # Delete Helm chart default CPU limit
-      memory: 400Mi
 
 # Metrics scraper is enabled by default
 metricsScraper:
@@ -46,9 +37,6 @@ metricsScraper:
     requests:
       cpu: 5m  # Reduced from 50m based on actual usage (1m)
       memory: 200Mi
-    limits:
-      cpu: null  # Delete Helm chart default CPU limit
-      memory: 400Mi
 
 # Service configuration
 service:
