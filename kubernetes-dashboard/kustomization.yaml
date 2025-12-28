@@ -4,4 +4,8 @@ kind: Kustomization
 resources:
   # ArgoCD Application 리소스는 infrastructure/kustomization.yaml에서 관리
   # - argocd/kubernetes-dashboard.yaml
+
+  # Namespace with Goldilocks label
+  - namespace.yaml
+
   - ingress.yaml
