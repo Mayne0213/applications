@@ -9,3 +9,8 @@ resources:
   - code-server/argocd.yaml
   - umami/argocd.yaml
   - headlamp/argocd.yaml
+  - jaejadle/argocd.yaml
+  - joossam/argocd.yaml
+  - jovies/argocd.yaml
+  - portfolio/argocd.yaml
+  - todo/argocd.yaml
