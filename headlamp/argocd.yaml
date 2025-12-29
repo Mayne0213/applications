@@ -1,44 +1,28 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: kubernetes-dashboard
+  name: headlamp
   namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
   project: default
   sources:
-  - repoURL: https://kubernetes.github.io/dashboard
-    chart: kubernetes-dashboard
-    targetRevision: 7.13.0
+  - repoURL: https://headlamp-k8s.github.io/headlamp
+    chart: headlamp
+    targetRevision: 0.25.1
     helm:
       valueFiles:
-      - $values/kubernetes-dashboard/helm-values.yaml
+      - $values/headlamp/helm-values.yaml
   - repoURL: https://github.com/Mayne0213/applications.git
     targetRevision: main
     ref: values
   - repoURL: https://github.com/Mayne0213/applications.git
     targetRevision: main
-    path: kubernetes-dashboard
+    path: headlamp
   destination:
     server: https://kubernetes.default.svc
-    namespace: kubernetes-dashboard
-  ignoreDifferences:
-  - group: ''
-    kind: Secret
-    name: kubernetes-dashboard-csrf
-    jsonPointers:
-    - /data
-  - group: apps
-    kind: Deployment
-    name: kubernetes-dashboard-api
-    jsonPointers:
-    - /spec/template/metadata/annotations/checksum~1config
-  - group: apps
-    kind: Deployment
-    name: kubernetes-dashboard-auth
-    jsonPointers:
-    - /spec/template/metadata/annotations/checksum~1config
+    namespace: headlamp
   syncPolicy:
     automated:
       prune: true

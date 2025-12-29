@@ -8,4 +8,4 @@ resources:
   - docusaurus/argocd.yaml
   - code-server/argocd.yaml
   - umami/argocd.yaml
-  - kubernetes-dashboard/argocd.yaml
+  - headlamp/argocd.yaml
