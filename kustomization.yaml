@@ -10,3 +10,4 @@ resources:
   - umami/argocd.yaml
   - headlamp/argocd.yaml
   - immich/argocd.yaml
+  - crafty/argocd.yaml
