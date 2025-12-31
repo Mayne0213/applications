@@ -9,3 +9,4 @@ resources:
   - code-server/argocd.yaml
   - umami/argocd.yaml
   - headlamp/argocd.yaml
+  - immich/argocd.yaml
