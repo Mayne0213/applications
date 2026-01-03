@@ -3,6 +3,18 @@
   "extends": [
     "config:recommended"
   ],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "managerFilePatterns": ["argocd\\.yaml$"],
+      "matchStrings": [
+        "repoURL:\\s*(?<registryUrl>ghcr\\.io[^\\s]+)[\\s\\S]*?chart:\\s*(?<depName>[^\\s]+)[\\s\\S]*?targetRevision:\\s*(?<currentValue>[^\\s]+)"
+      ],
+      "datasourceTemplate": "helm",
+      "registryUrlTemplate": "oci://{{registryUrl}}",
+      "depNameTemplate": "{{depName}}"
+    }
+  ],
   "kubernetes": {
     "fileMatch": ["\\.yaml$"]
   },
