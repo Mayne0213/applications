@@ -8,11 +8,10 @@
       "customType": "regex",
       "managerFilePatterns": ["argocd\\.yaml$"],
       "matchStrings": [
-        "repoURL:\\s*(?<registryUrl>ghcr\\.io[^\\s]+)[\\s\\S]*?chart:\\s*(?<depName>[^\\s]+)[\\s\\S]*?targetRevision:\\s*(?<currentValue>[^\\s]+)"
+        "repoURL:\\s*(?<registryUrl>ghcr\\.io/[^\\s]+)\\n\\s+chart:\\s*(?<depName>[^\\s]+)\\n\\s+targetRevision:\\s*(?<currentValue>[^\\s]+)"
       ],
       "datasourceTemplate": "helm",
-      "registryUrlTemplate": "oci://{{registryUrl}}",
-      "depNameTemplate": "{{depName}}"
+      "registryUrlTemplate": "oci://{{registryUrl}}"
     }
   ],
   "kubernetes": {
